@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  height: 100vh;
+  background: #121212;
+  overflow: hidden;
+}
+.main {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+.main .box {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  padding: 21px 33px 15px 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: ani 0.8s ease forwards;
+}
+@keyframes ani {
+  0% {
+    transform: translateX(100%);
+  }
+  40% {
+    transform: translateX(-5%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+#hide:checked ~ .box {
+  animation: anitwo 0.8s ease forwards;
+}
+@keyframes anitwo {
+  0% {
+    transform: translateX(0%);
+  }
+  40% {
+    transform: translateX(5%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(calc(100% + 35px));
+  }
+}
+.main .box i {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #666;
+  transition: 0.3s ease;
+}
+.main i:hover {
+  cursor: pointer;
+  color: #000;
+}
+.main .logo {
+  margin-right: 15px;
+  height: 90px;
+  width: 90px;
+}
+.main .logo img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  -webkit-user-drag: none;
+}
+.box .right {
+  display: flex;
+  flex-direction: column;
+}
+.box .right .text-1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+.box .right .text-2 {
+  margin: 2px 0 8px 0;
+  font-size: 14px;
+  color: #666;
+}
+.box .right a {
+  font-size: 18px;
+  font-weight: 500;
+  display: block;
+  padding: 8px 0;
+  background: #24d8fc;
+  border-radius: 6px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.box .right a:hover {
+  background-color: #03bde2;
+}
+.main #hide {
+  display: none;
+}
+::selection {
+  color: #24d8fc;
+}
+.box .right a::selection {
+  color: #fff;
+  background: #24d8fc;
+}
